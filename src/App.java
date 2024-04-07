@@ -13,6 +13,20 @@ public class App {
     private static List<String> transactionHistory = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
+        System.out.println("*=====================================*\n"+
+                           "*               SAFARICOM             *\n"+
+                           "*  _________.   __________    ..    ..*\n"+
+                           "* | ________.   __________    ||   // *\n"+
+                           "* ||                ||        ||  //  *\n"+
+                           "* ||                ||        || //   *\n"+
+                           "* ||________        ||        ||//    *\n"+
+                           "* |_________|       ||        ||\\\\    *\n"+
+                           "*          ||       ||        || \\\\   *\n"+
+                           "*          ||       ||        ||  \\\\  *\n"+
+                           "*._________||       ||        ||   \\\\ *\n"+
+                           "*.__________|       ||        ||    \\\\*\n"+
+                           "*                                     *\n"+
+                           "*=====================================*\n");
         userSetting();
     }
 
@@ -98,8 +112,8 @@ public class App {
                     System.out.println("Success!\nAirtime Balance: " + airtimeBalance + "KES\n" + "M-Pesa Balance: "
                             + mpesaBalance + "KES\n");
 
-                    addToTransactionHistory("Purchased Airtime", amount);
-                    addToTransactionHistory("Amount Used From M-pesa", -amount);
+                    addToTransactionHistory("Purchased Airtime", amount );
+                    addToTransactionHistory("Bought Airtime From M-Pesa", -amount);
                     restart();
                 } else if (amount > mpesaBalance) {
                     // denied
@@ -264,7 +278,7 @@ public class App {
     }
 
     public static void addToTransactionHistory (String transactionType, double amountTransacted) {
-        String transaction = transactionType + ": " + amountTransacted + "\n";
+        String transaction = transactionType + ": " + amountTransacted + "KES\n";
         transactionHistory.add(transaction);
     }
 
@@ -275,11 +289,12 @@ public class App {
 
         if (inputPin == mpesaPin) {
             // success
+            System.out.println("Transaction History: \n");
             if (transactionHistory.isEmpty()) {
                 System.out.println("No Transactions Yet!");
             } else {
                 for (String transaction : transactionHistory) {
-                    System.out.println("Transaction History: \n" + transaction);
+                    System.out.println(transaction);
                 }
             }
             restart();
