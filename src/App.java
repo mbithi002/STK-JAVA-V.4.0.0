@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-
+    // update git
     private static User user1 = new User(0, 0, 100000, 0, 0);
     private static int phoneNumber = user1.get_phoneNumber();
     private static int mpesaPin = user1.get_mpesaPin();
