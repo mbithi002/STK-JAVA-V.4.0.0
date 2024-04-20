@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    
+    // GLBAL VARIABLES THAT  WILL BE USED BY METHOS
     private static User user1 = new User(0, 0, 100000, 0, 0);
     private static int phoneNumber = user1.get_phoneNumber();
     private static int mpesaPin = user1.get_mpesaPin();
@@ -12,7 +12,9 @@ public class App {
     private static int dataBalance = user1.get_dataBalance();
     private static List<String> transactionHistory = new ArrayList<>();
 
+    // MAIN METHOD
     public static void main(String[] args) throws Exception {
+        // WELCOME MESSAGE
         System.out.println("*=======================================*\n"+
                            "*_| S | A | F | A | R | I | C | O | M |_*\n"+
                            "*---------------------------------------*\n"+
@@ -28,9 +30,14 @@ public class App {
                            "*.__________|------|__|------|_|----\\ \\-*\n"+
                            "*---------------------------------------*\n"+
                            "*=======================================*\n");
+        //    FIRST METHOD TO ALLOW USER TO SETUP ACCOUNT
         userSetting();
     }
 
+    // ABSTRACTION
+    // POLYMORPHISM
+    // BELOW ARE ALL THE METHODS
+    // USER TO INPUT THEIR MOBILE PHONE NUMBER AND PIN
     public static void userSetting() {
         System.out.println("Enter: \n1. Phone Number (Press Enter)\n2. M-Pesa PIN (Press Enter)\n");
         Scanner scanner = new Scanner(System.in);
@@ -41,6 +48,7 @@ public class App {
         scanner.close();
     }
 
+    // DISPLAYS A LIST OF OPTIONS PROMPTING THE USER TO SELECT ACTION
     public static void menuOptions() {
         System.out.println(
                 "Menu:\nSelect:\n1. Check Airtime Balance\n2. Purchase Airtime\n3. Check Data Balance\n4. Subscribe to Data Bundles\n5. Check Mpesa Balance\n6. Transaction History\n7. Change My M-Pesa PIN\n");
@@ -87,11 +95,13 @@ public class App {
         restart();
     }
 
+    // IF SELECTED SHOWS AIRTIM BALANCE
     public static void checkAirtimeBalance() {
         System.out.println("Airtime Balance: " + airtimeBalance + "KES\n");
         restart();
     }
 
+    // IF SELECTED , USER CAN PURCHASE AIRTIME
     public static void purchaseAirtime() {
         System.out.println("Enter Your Phone Number: ");
         Scanner scanner = new Scanner(System.in);
@@ -135,6 +145,7 @@ public class App {
         scanner.close();
     }
 
+    // IF SELECTED QUERRIES DATA BALANCE FROM USER'S ACCOUNT
     public static void checkDataBalance() {
         System.out.println("Enter Phone Number: ");
         Scanner scanner = new Scanner(System.in);
@@ -154,6 +165,7 @@ public class App {
         scanner.close();
     }
 
+    //  IF SELECTED , THE USER CAN BUY DATA BUNDLE FROM THEIR AIRTIME LIMITED TO THEIR BALANCE.
     public static void subscribeToDataBundle() {
         System.out.println("Enter Your Phone Number: ");
         Scanner scanner = new Scanner(System.in);
@@ -220,6 +232,7 @@ public class App {
         scanner.close();
     }
 
+    // IF SELECTED THE USER CAN QUERRY THEIR MPESA BALANCE WITH THE CORRECT PIN.
     public static void checkMpesaBalance() {
         System.out.println("Enter Your Phone Number: ");
         Scanner scanner = new Scanner(System.in);
@@ -241,6 +254,7 @@ public class App {
         scanner.close();
     }
 
+    // IF SELECTED THE USER CAN CHANGE THEIR MPESA PIN
     public static void changePin() {
         System.out.println("Enter Your Old PIN: ");
         Scanner scanner = new Scanner(System.in);
@@ -259,6 +273,7 @@ public class App {
         scanner.close();
     }
 
+    // THIS METHOD ALLOWS THE USER TO END SESSION AFTER ACTIONS OR CONTINUE WITH THE MENU OPTIONS
     public static void restart() {
         System.out.println("Select: \n1. To Continue\n2. To End Session\n");
         Scanner scanner = new Scanner(System.in);
@@ -278,11 +293,13 @@ public class App {
         scanner.close();
     }
 
+    // THIS METHOD ADDS EVERY ACTION / TRANSACTION TO TRANSACTON HISTORY
     public static void addToTransactionHistory (String transactionType, double amountTransacted) {
         String transaction = transactionType + ": " + amountTransacted + "KES\n";
         transactionHistory.add(transaction);
     }
 
+    //  WHEN SELECTED THE USER CAN GET THEIR TRANSACTION HISTORY PRINTED OUT AS A STRING
     public static void transactionHistory() {
         System.out.println("Enter M-pesa Pin: ");
         Scanner scanner = new Scanner(System.in);

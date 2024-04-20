@@ -1,14 +1,18 @@
+// MPESA CLASS WITH THE ATTRIBUTES BALANCES
+// SUPERCLASS
 public class Mpesa {
+    // ENCAPSULATED  FIELDS
     private float _mpesaBalance;
     private int _airtimeBalance;
     private int _dataBalance;
 
+    // CONSTRUCTOR
     public Mpesa(float mpesaBalance, int airtimeBalance, int dataBalance) {
         _mpesaBalance = mpesaBalance;
         _airtimeBalance = airtimeBalance;
         _dataBalance = dataBalance;
     }
-
+    // GETTERS AND SETTERS
     public void set_mpesaBalance(float mpesaBalance) {
         _mpesaBalance = mpesaBalance;
     }
