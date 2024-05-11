@@ -6,7 +6,7 @@ public class App {
     // GLBAL VARIABLES THAT  WILL BE USED BY METHOS
     private static User user1 = new User(0, 0, 100000, 0, 0);
     private static int phoneNumber = user1.get_phoneNumber();
-    private static int mpesaPin = user1.get_mpesaPin();
+    private static int mpesaPin = user1.get_mpesaPin();                                                                              
     private static float mpesaBalance = user1.get_mpesaBalance();
     private static int airtimeBalance = user1.get_airtimeBalance();
     private static int dataBalance = user1.get_dataBalance();
